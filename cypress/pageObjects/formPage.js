@@ -1,4 +1,17 @@
 class FormPage {
+  elements = {
+    firstName: () => cy.get('#firstName'),
+    lastName: () => cy.get('#lastName'),
+    email: () => cy.get('#userEmail'),
+    phone: () => cy.get('#userNumber'),
+    subject: () => cy.get('#subjectsInput'),
+    uploadPicture: () => cy.get('#uploadPicture'),
+    address: () => cy.get('#currentAddress'),
+    state: () => cy.get('#state'),
+    city: () => cy.get('#city'),
+    submit: () => cy.get('#submit'),
+    modal: () => cy.get('.modal-content')
+  }
 
   visitarPagina() {
     cy.visit('https://demoqa.com/automation-practice-form', {
@@ -7,54 +20,54 @@ class FormPage {
   }
 
   preencherNome(nome, sobrenome) {
-    cy.get('#firstName').type(nome)
-    cy.get('#lastName').type(sobrenome)
+    this.elements.firstName().type(nome)
+    this.elements.lastName().type(sobrenome)
   }
 
   preencherEmail(email) {
-    cy.get('#userEmail').type(email)
+    this.elements.email().type(email)
   }
 
-  selecionarGenero() {
+  selecionarGeneroFemale() {
     cy.get('label[for="gender-radio-2"]').click()
   }
 
   preencherTelefone(telefone) {
-    cy.get('#userNumber').type(telefone)
+    this.elements.phone().type(telefone)
   }
 
   preencherSubject(subject) {
-    cy.get('#subjectsInput').type(subject + '{enter}')
+    this.elements.subject().type(`${subject}{enter}`)
   }
 
-  selecionarHobby() {
+  selecionarHobbyMusic() {
     cy.get('label[for="hobbies-checkbox-3"]').click()
   }
 
   uploadArquivo() {
-    cy.get('#uploadPicture').selectFile('cypress/fixtures/teste.png')
+    this.elements.uploadPicture().selectFile('cypress/fixtures/teste.png')
   }
 
   preencherEndereco(endereco) {
-    cy.get('#currentAddress').type(endereco)
+    this.elements.address().type(endereco)
   }
 
   selecionarStateCity() {
-    cy.get('#state').click()
-    cy.get('[id^="react-select-3-option"]').last().click()
+    this.elements.state().click()
+    cy.contains('[id^="react-select-3-option"]', 'Rajasthan').click()
 
-    cy.get('#city').click()
-    cy.get('[id^="react-select-4-option"]').last().click()
+    this.elements.city().click()
+    cy.contains('[id^="react-select-4-option"]', 'Jaiselmer').click()
   }
 
   submeterFormulario() {
-    cy.get('#submit').scrollIntoView().click()
+    this.elements.submit().scrollIntoView().click()
   }
 
   validarModal() {
-    cy.get('.modal-content').should('be.visible')
+    this.elements.modal().should('be.visible')
+    cy.contains('Thanks for submitting the form').should('be.visible')
   }
-
 }
 
 export default new FormPage()
