@@ -1,4 +1,4 @@
-import formPage from '../pageObjects/formPage'
+import formPage from '../../pageObjects/formPage'
 
 describe('Cakto - Automation Practice Form', () => {
 

@@ -1,0 +1,9 @@
+{
+  "title": "Produto Teste QA",
+  "price": 150,
+  "description": "Produto criado via automação",
+  "categoryId": 1,
+  "images": [
+    "https://placehold.co/600x400"
+  ]
+}

@@ -1,5 +1,9 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "title": "Produto Teste QA kath",
+  "price": 150,
+  "description": "Produto criado via automação vaga Cakto",
+  "categoryId": 1,
+  "images": [
+    "https://placehold.co/600x400"
+  ]
 }
