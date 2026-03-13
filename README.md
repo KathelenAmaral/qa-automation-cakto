@@ -180,7 +180,7 @@ npm install
 
 Executar os testes
 
-Para executar os testes em modo interativo:
+Executar todos os testes via terminal
 ```bash
 npx cypress open
 ```
@@ -195,7 +195,8 @@ Executar os testes desejados:
     formCakto.cy.js (testes de UI)
     products.cy.js (testes de API)
 
-Executar todos os testes via terminal
+
+Para executar os testes em modo interativo:
 ```bash
 npx cypress run
 ```

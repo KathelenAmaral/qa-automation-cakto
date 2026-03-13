@@ -4,5 +4,7 @@
   "email": "kathelen@email.com",
   "phone": "4199999999",
   "subject": "Computer Science",
-  "address": "Curitiba - PR"
+  "address": "Curitiba - PR",
+  "state": "NCR",
+  "city": "Delhi"
 }

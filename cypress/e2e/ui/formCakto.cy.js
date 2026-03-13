@@ -17,7 +17,7 @@ describe('Cakto - Automation Practice Form', () => {
       formPage.selecionarHobbyMusic()
       formPage.uploadArquivo()
       formPage.preencherEndereco(data.address)
-      formPage.selecionarStateCity()
+      formPage.selecionarStateCity(data.state, data.city)
       formPage.submeterFormulario()
       formPage.validarModal()
 
@@ -55,7 +55,7 @@ describe('Cakto - Automation Practice Form', () => {
 
       cy.contains('td', 'State and City')
         .next('td')
-        .should('contain', 'Rajasthan Jaiselmer')
+        .should('contain', `${data.state} ${data.city}`)
     })
   })
 

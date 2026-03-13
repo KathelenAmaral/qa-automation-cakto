@@ -52,12 +52,12 @@ class FormPage {
     this.elements.address().type(endereco)
   }
 
-  selecionarStateCity() {
+  selecionarStateCity(state, city) {
     this.elements.state().click()
-    cy.contains('[id^="react-select-3-option"]', 'Rajasthan').click()
+    cy.contains('[id^="react-select-3-option"]', state).click()
 
     this.elements.city().click()
-    cy.contains('[id^="react-select-4-option"]', 'Jaiselmer').click()
+    cy.contains('[id^="react-select-4-option"]', city).click()
   }
 
   submeterFormulario() {
